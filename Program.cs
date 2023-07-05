@@ -14,9 +14,10 @@ namespace Simple_Banking_App
             Console.WriteLine($"An Account {Account.Number} has been created for " +
                 $"{Account.Name} with initial balance of {Account.Balance}");
             Account.makeDeposit(1500, DateTime.Now, "savings");
-            Console.WriteLine(Account.Balance);
             Account.makeWithdraw(700, DateTime.Now, "Pizza");
-            Console.WriteLine(Account.Balance);
+            Account.makeWithdraw(2000, DateTime.Now, "Rent");
+            Console.WriteLine("\t\tAccount History");
+            Console.WriteLine(Account.getAccountHistory());
             Console.ReadLine();
         }
     }

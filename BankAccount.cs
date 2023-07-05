@@ -58,5 +58,18 @@ namespace Simple_Banking_App
             Alltransactions.Add(withdrawa);
 
         }
+        public string getAccountHistory()
+        {
+            var reports = new StringBuilder();
+            //Report Headers
+            reports.AppendLine("Date\t\tAmount\t\tNotes");
+            foreach(var transaction in Alltransactions)
+            {
+                //Report Rows
+                reports.AppendLine($"{transaction.Date.ToShortDateString()}\t" +
+                    $"{transaction.Amount}\t\t{transaction.Notes}");
+            }
+            return reports.ToString();
+        }
     }
 }
